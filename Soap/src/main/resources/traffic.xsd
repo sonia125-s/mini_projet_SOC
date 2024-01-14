@@ -1,0 +1,35 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://Route.Traffic.com"
+           elementFormDefault="qualified"
+           xmlns:tns="http://Route.Traffic.com">
+    <xs:element name="getAllTrafficRequest">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="getAllTrafficResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tns:traffics" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="traffics">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="tns:Traffic" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="Traffic">
+    <xs:complexType >
+        <xs:sequence>
+            <xs:element name="Id" type="xs:int"/>
+            <xs:element name="StreetName" type="xs:string"/>
+            <xs:element name="CountryName" type="xs:string"/>
+            <xs:element name="TrafficPercentage" type="xs:float"/>
+            <xs:element name="Date" type="xs:date"/>
+            <xs:element name="Hour" type="xs:time"/>
+            <xs:element name="CityName" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    </xs:element>
+</xs:schema>
